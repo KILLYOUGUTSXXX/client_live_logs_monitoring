@@ -1,0 +1,89 @@
+.header {
+  background-color: rgb(37, 92, 230);
+}
+.sidebar {
+  box-shadow: 1.3px 0.8px 1.33px rgba(12, 1, 38, 0.503);
+  transition: .3s ease;
+  padding-top: 40px;
+}
+
+.appsBox { overflow: hidden; }
+
+.appsBox.min { height: 50px; }
+.appsBox.max { height: 25px; }
+
+
+
+.sidebar.min { width: 80px; }
+.sidebar.max { width: 300px; }
+
+.sidebar-content {
+  display: block;
+  /* row-gap: 16px; */
+}
+
+.iconCollapsed {
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.iconCollapsed.min { margin: auto; padding-left: 5%; }
+
+.collapsedText {
+  font-size: 14px;
+  font-weight: bold;
+  /* padding: 8px; */
+  padding-left: 5px;
+  transition: .43s ease;
+}
+
+.collapsedText.max {
+  margin-top: 0px;
+}
+
+.collapsedText.min {
+  margin-top: 100px;
+}
+
+
+.content {
+  padding: 0px 20px;
+}
+
+.sidebar-content > .btn-menu {
+  position: relative;
+  width: 100%;
+  padding: 10px 10px;
+  margin-bottom: 2px;
+}
+
+
+
+.sidebar-content > .btn-menu > .appsBox::after, .sidebar-content > .btn-menu > .appsBox::before {
+  width: 0%;
+  right: 0;
+  content: "";
+  height: 100%;
+  width: 0px;
+  bottom: 0px;
+}
+
+.sidebar-content > .btn-menu > .appsBox::after {
+  transition: .33s ease;
+  background-color: rgb(37, 92, 230);
+  box-shadow: 1px 1.23px 1.75px rgba(0, 0, 0, 0.45);
+  position: absolute;
+}
+
+.sidebar-content > .btn-menu > .appsBox::before {
+  transition: .45s ease;
+  background: linear-gradient(90deg, rgba(233,233,233,0.15) 0%, rgba(223,247,247,0.15) 50%, rgba(236,241,255,0.15) 100%);
+  box-shadow: 1px .3px 7px rgba(0, 0, 0, .53);
+  position: absolute;
+}
+
+.sidebar-content > .btn-menu:hover > .appsBox::before, .sidebar-content > .btn-menu.selected > .appsBox::before { width: 100%; }
+.sidebar-content > .btn-menu:hover > .appsBox::after, .sidebar-content > .btn-menu.selected > .appsBox::after { width: 4px; }
+
+.sidebar-content > .btn-menu.selected > .appsBox::after { width: 4px; }
+/* .sidebar-content > .btn-menu.selected > .appsBox::before { box-shadow: 1.3px 1.1px 3px rgb(37, 92, 230, .55); } */
