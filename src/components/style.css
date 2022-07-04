@@ -1,0 +1,70 @@
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+.btn-afx {
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: none;
+  width: fit-content;
+  transition: .33s ease;
+}
+
+.btn-afx:disabled {
+  background-color: initial;
+  opacity: 1;
+  color: initial;
+  font-weight: 350;
+}
+
+
+
+.btn-afx.sz-default { padding: 2px 8px; font-size: 12px; }
+.btn-afx.sz-small { padding: 0px 6px; font-size: 10px; }
+.btn-afx.sz-large { padding: 2px 8px; font-size: 14px; }
+
+.btn-afx.tp-default { border: 1px solid rgba(62, 107, 242, 0.825); }
+.btn-afx.tp-default:hover {
+  color: white;
+  border: 1px solid rgba(62, 107, 242, 0.825);
+  box-shadow: 1px 1.83px 2.4px rgba(0,0,0,.531);
+  background-color: rgba(62, 107, 242, 0.825);
+}
+
+.btn-afx.tp-primary { border: 1px solid rgb(156, 127, 230) }
+.btn-afx.tp-primary:hover {
+  color: white;
+  border: 1px solid rgb(156, 127, 230);
+  box-shadow: 1px 1.83px 2.4px rgba(0,0,0,.531);
+  background-color: rgb(156, 127, 230);
+}
+
+.btn-afx.tp-danger { border: 1px solid rgb(255, 98, 74) }
+.btn-afx.tp-danger:hover {
+  color: white;
+  border: 1px solid rgb(255, 98, 74);
+  box-shadow: 1px 1.83px 2.4px rgba(0,0,0,.531);
+  background-color: rgb(255, 98, 74);
+}
+
+.btn-afx.tp-warning { border: 1px solid rgb(218, 218, 0) }
+.btn-afx.tp-warning:hover {
+  color: white;
+  border: 1px solid rgb(218, 218, 0);
+  box-shadow: 1px 1.83px 2.4px rgba(0,0,0,.531);
+  background-color: rgb(218, 218, 0);
+}
+
+.btn-afx.disabled:hover { cursor: not-allowed; box-shadow: none; background-color: initial; color: black; }
+
+.btn-icon-spin {
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
