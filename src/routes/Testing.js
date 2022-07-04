@@ -36,11 +36,6 @@ function Testing ({ calls, ...props }) {
 
   return (
     <Box pad="large">
-      {
-        loadingData ? (
-          <h2>{processDesc} is running.</h2>
-        ) : <h2>-</h2>
-      }
       <Grid columns={cardGridSize[size]} gap="large">
         {new Array(10).fill('-').map((x, y) => generateCard(x, y))}
       </Grid>

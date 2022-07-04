@@ -17,13 +17,13 @@ import './App.css'
 
 const history = createBrowserHistory({ window })
 
-function connectModels (models = function () {}, component) {
+function connectModels (models = function () {}, component, props = {}) {
   const Components = connect(
     models,
     (dispatch) => ({ calls: createActions(dispatch).call })
   )(component)
 
-  return <Components />
+  return cloneElement(<Components />, { ...props })
 }
 
 // function to build nested route

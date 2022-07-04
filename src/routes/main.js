@@ -16,6 +16,8 @@ function MainApps ({
   moveTo, currentPath, childs, ...props
 }) {
   const [collapsed, onCollapse] = useState(false)
+  const { processDesc } = props.app
+  const loadingData = (props.loadings['app/processData'] || false)
 
   const MenuItems = ({
     icons, title, paths, keys
@@ -38,8 +40,15 @@ function MainApps ({
   return (
     <Grommet theme={grommet} full>
       <Grid fill rows={["auto", "flex", "auto"]}>
-        <Box tag="header" className="header" pad="small">
+        <Box tag="header" className="header" pad="small" justify="start" direction="r">
           <Icons type='Menu' color="white" size="medium" onClick={_ => onCollapse(!collapsed)} cursor="pointer" />
+          <span style={{ fontWeight: 'bold', color: 'white', fontSize: 18, marginLeft: 20 }}>
+            {
+              loadingData ? (
+                <span>{processDesc} is running</span>
+              ) : <span>No Process</span>
+            }
+          </span>
         </Box>
         <Box direction="row" justify="start">
           <Box
@@ -67,4 +76,4 @@ function MainApps ({
 
 
 
-export default MainApps
+export default ({ connectModels, ...props }) => connectModels(({ app, loadings }) => ({ app, loadings }), MainApps, props)
